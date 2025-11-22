@@ -1,0 +1,451 @@
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.pagenation {
+  position: fixed !important;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  z-index: 999;
+  padding: 10px 20px;
+  border-radius: 25px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.pagenation.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.pagenation.show-on-scroll {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.pagenation .btn-group {
+  margin: 0;
+}
+
+.pagenation .btn {
+  background: rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 20px;
+  margin: 0 5px;
+  min-width: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #333 !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.pagenation .btn:hover {
+  background: rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.pagenation .btn:active {
+  background: rgba(255, 255, 255, 0.6) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(31, 38, 135, 0.4);
+}
+
+/* Glass style for navigation */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.glass-navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.glass-navbar .navbar-collapse {
+  flex-grow: 0;
+}
+
+.glass-navbar .navbar-nav {
+  align-items: center;
+}
+
+.glass-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(25px) !important;
+}
+
+.glass-brand {
+  color: #2c3e50 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.glass-brand:hover {
+  transform: scale(1.05);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.glass-nav-link {
+  color: #34495e !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.25rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.glass-nav-link:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #2c3e50 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.glass-nav-link:hover::before {
+  left: 0;
+}
+
+.glass-nav-link.active {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #2c3e50 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.glass-cart-btn {
+  background: rgba(52, 152, 219, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(52, 152, 219, 0.4) !important;
+  color: #2c3e50 !important;
+  border-radius: 50px;
+  padding: 0.75rem 1.25rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.glass-cart-btn:hover {
+  background: rgba(52, 152, 219, 0.5) !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4) !important;
+  border: 1px solid rgba(52, 152, 219, 0.6) !important;
+  color: white !important;
+}
+
+.glass-badge {
+  background: rgba(231, 76, 60, 0.9) !important;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  font-size: 0.7em;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.glass-toggler {
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 8px;
+}
+
+.glass-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+.glass-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2844, 62, 80, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Mobile navigation improvements */
+.navbar-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    margin-top: 10px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-nav-link {
+    margin: 0.25rem 0;
+    text-align: center;
+  }
+
+  .glass-cart-btn {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+/* Smooth collapse animation */
+.navbar-collapse.collapsing {
+  transition: height 0.3s ease;
+}
+
+/* Add CSS custom property for navbar height */
+:root {
+  --navbar-height: 65px;
+}
+
+/* Add padding to body to account for fixed navbar */
+body {
+  padding-top: var(--navbar-height) !important;
+  margin: 0;
+}
+
+/* Main content wrapper to prevent overlap with fixed navbar */
+.container:not(.glass-navbar .container) {
+  margin-top: 20px !important;
+  padding-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Additional spacing for product rows */
+.row {
+  margin-top: 20px;
+}
+
+/* Responsive navbar height adjustments */
+@media (max-width: 991.98px) {
+  :root {
+    --navbar-height: 70px;
+  }
+
+  .glass-navbar .container {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 575.98px) {
+  :root {
+    --navbar-height: 65px;
+  }
+}
+
+/* Glass style for product cards */
+.card {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(15px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+  border-radius: 15px !important;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.card-body {
+  background: transparent !important;
+}
+
+.card-img-top {
+  border-radius: 10px !important;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-title {
+  color: #2c3e50 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-text {
+  color: #34495e !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card .btn-warning {
+  background: rgba(255, 193, 7, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 193, 7, 0.3) !important;
+  transition: all 0.3s ease;
+}
+
+.card .btn-warning:hover {
+  background: rgba(255, 193, 7, 1) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4) !important;
+}
+
+/* Glass style for Add to Cart button */
+.glass-add-to-cart-btn {
+  background: rgba(46, 204, 113, 0.2) !important;
+  backdrop-filter: blur(15px) !important;
+  border: 1px solid rgba(46, 204, 113, 0.3) !important;
+  color: #27ae60 !important;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(46, 204, 113, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-add-to-cart-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.glass-add-to-cart-btn:hover {
+  background: rgba(46, 204, 113, 0.35) !important;
+  color: #fff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(46, 204, 113, 0.3) !important;
+  border: 1px solid rgba(46, 204, 113, 0.5) !important;
+}
+
+.glass-add-to-cart-btn:hover::before {
+  left: 100%;
+}
+
+.glass-add-to-cart-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+}
+
+.glass-add-to-cart-btn i {
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.glass-add-to-cart-btn:hover i {
+  transform: scale(1.1);
+}
+
+/* Card footer styling */
+.card-footer.bg-transparent {
+  background: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(5px);
+}
+
+/* Scroll-based pagination visibility */
+@media (min-height: 400px) {
+  .pagenation {
+    /* Show pagination when user scrolls to bottom 20% of page */
+  }
+}
+
+/* CSS-only scroll detection alternative */
+.scroll-watcher {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Show pagination on hover near bottom or when at bottom of page */
+.pagenation:hover,
+.pagenation:focus-within {
+  transform: translateX(-50%) translateY(0) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* JavaScript will handle the main scroll detection, but CSS handles hover states */
+body.near-bottom .pagenation {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
