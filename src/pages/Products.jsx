@@ -36,7 +36,7 @@ function Products() {
   return (
     <>
       <div class="container py-3">
-        <ProductsList products={products()} loading={isLoading()} actionPagenate={pagenate}/>
+        <ProductsList products={products()} loading={isLoading()} actionPagenation={{pagenate}}/>
       </div>
     </>
   )

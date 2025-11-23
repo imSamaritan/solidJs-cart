@@ -11,6 +11,7 @@ function Card(props) {
 
   return (
     <Show when={props.product} fallback={<p>Loading...</p>}>
+      {console.log(props.product)}
       <div class="card mb-3 h-fluid">
         <A href={`/products/${props.product.id}`} style="text-decoration:none">
           <div class="text-center">
