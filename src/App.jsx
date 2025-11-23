@@ -1,12 +1,11 @@
-import Products from './pages/Products'
 import Navigation from './components/Navigation'
 
-function App() {
+function App(props) {  
   return (
-    <>
-      <Navigation />
-      <Products />
-    </>
+    <div class="container-fluid">
+      <Navigation />      
+      {props.children}
+    </div>
   )
 }
 

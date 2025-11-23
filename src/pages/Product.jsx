@@ -1,10 +1,11 @@
-import { createSignal, onMount, Show } from 'solid-js'
+import { createSignal, onMount, onCleanup, Show } from 'solid-js'
 import { useParams } from '@solidjs/router'
 import ProductsModel from '../js/ProductsModel'
+import Card from './shared/Card'
 
 function Product() {
   const { id } = useParams()
-  const [product, setProduct] = createSignal({})
+  const [product, setProduct] = createSignal(null)
   const [isLoading, setIsLoading] = createSignal(true)
 
   onMount(async () => {
@@ -17,13 +18,23 @@ function Product() {
       setIsLoading(false)
     }
   })
+  
+  onCleanup(() => {
+    setProduct(null)
+    setIsLoading(false)
+  })
+  
   return (
     <>
       <Show when={isLoading()}>
         <div class="loader"></div>
       </Show>
 
-      <Show when={product()}>{console.log(product())}</Show>
+      <Show when={product() != null}>
+        <div class="mt-5">
+          <Card product={product()}/>
+        </div>
+      </Show>
     </>
   )
 }

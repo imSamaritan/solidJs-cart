@@ -51,13 +51,13 @@ function ProductsList(props) {
         <div className="btn-group">
           <button
             class="btn btn-group-item btn-light"
-            on:click={() => props.actionPagenate('left')}
+            on:click={() => props.actionPagenation.pagenate('left')}
           >
             {'<<'}
           </button>
           <button
             class="btn btn-group-item btn-light"
-            on:click={() => props.actionPagenate('right')}
+            on:click={() => props.actionPagenation.pagenate('right')}
           >
             {'>>'}
           </button>
