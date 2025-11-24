@@ -2,6 +2,7 @@ import { createSignal, onMount, onCleanup, Show } from 'solid-js'
 import { useParams } from '@solidjs/router'
 import ProductsModel from '../js/ProductsModel'
 import Card from './shared/Card'
+import ProductList from './shared/ProductList'
 
 function Product() {
   const { id } = useParams()
@@ -32,7 +33,7 @@ function Product() {
 
       <Show when={product() != null}>
         <div class="mt-5">
-          <Card product={product()}/>
+          <ProductList product={product()}/>
         </div>
       </Show>
     </>

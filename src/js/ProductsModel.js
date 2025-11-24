@@ -3,7 +3,7 @@ const productsEndPoint = 'https://dummyjson.com/products'
 export default {
   async all(limit = 0) {
     const productsResponse = await fetch(
-      `${productsEndPoint}/?limit=${limit}&delay=1000`,
+      `${productsEndPoint}/?limit=${limit}`,
     )
     const products = await productsResponse.json()
 
@@ -11,7 +11,7 @@ export default {
   },
 
   async find(id) {
-    const productResponse = await fetch(`${productsEndPoint}/${id}/?delay=1500`)
+    const productResponse = await fetch(`${productsEndPoint}/${id}`)
     const product = await productResponse.json()
 
     return product
