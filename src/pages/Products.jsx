@@ -19,7 +19,11 @@ function Products() {
   })
   
   const pagenate = async (side) => {
-    if (side === 'left' && pagenationCount() <= 10) return
+    setIsLoading(true)
+    if (side === 'left' && pagenationCount() <= 10) {
+      setIsLoading(false)
+      return
+    }
     if (side === 'left') setPagenationCount((count) => count - 3)
     if (side === 'right') setPagenationCount((count) => count + 3)
     
