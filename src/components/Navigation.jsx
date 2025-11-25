@@ -59,7 +59,7 @@ function Navigation() {
 
         {/* Navigation links */}
         <div
-          class={`collapse navbar-collapse ${!isCollapsed() ? 'show' : ''}`}
+          class={`collapse navbar-collapse ${!isCollapsed() ? 'show' : ''} py-2`}
           id="navbarNav"
         >
           <ul class="navbar-nav me-auto">
@@ -106,8 +106,7 @@ function Navigation() {
               onClick={handleNavClick}
             >
               <i class="bi bi-cart-fill fs-5"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill glass-badge">
-                3<span class="visually-hidden">items in cart</span>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill glass-badge">0<span class="visually-hidden">items in cart</span>
               </span>
             </A>
           </div>
