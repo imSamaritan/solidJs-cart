@@ -1,7 +1,7 @@
 import { A } from '@solidjs/router'
 import { createSignal, onMount } from 'solid-js'
 
-function Navigation() {
+function Navigation(props) {
   const [isCollapsed, setIsCollapsed] = createSignal(true)
   let navbarCollapseRef
 
@@ -25,12 +25,15 @@ function Navigation() {
     }
   })
 
-  const handleNavClick = () => {
+  const handleNavClick = (e) => {
     closeNavbar()
     // Use Bootstrap's collapse hide method if available
     if (navbarCollapseRef) {
       navbarCollapseRef.hide()
     }
+    
+    const path = e.target.getAttribute('href')
+    props.navigate(path)
   }
 
   return (
