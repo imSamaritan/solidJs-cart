@@ -4,7 +4,7 @@ function ProductList(props) {
   return (
     <>
       {console.log(props.product)}
-      <div class="container mt-3">
+      <div class="container">
         <div class="row gap-0">
           <div class="col-sm-12 col-md-5 col-lg-5 text-center">
             <img

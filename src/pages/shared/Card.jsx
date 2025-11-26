@@ -11,9 +11,8 @@ function Card(props) {
 
   return (
     <Show when={props.product} fallback={<p>Loading...</p>}>
-      {console.log(props.product)}
       <div class="card mb-3 h-fluid">
-        <A href={`/products/${props.product.id}`} style="text-decoration:none">
+        <A href={`/products/${props.product.id}`} style="text-decoration:none" onClick={() => props.navigate(`/products/${props.product.id}`)}>
           <div class="text-center">
             <img
               src={props.product.thumbnail}

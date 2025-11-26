@@ -37,7 +37,7 @@ function ProductsList(props) {
               return (
                 <>
                   <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                    <Card product={product} />
+                    <Card product={product} navigate={props.navigate} />
                   </div>
                 </>
               )
